@@ -1,6 +1,6 @@
 .why {
   position: relative;
-  padding: 112px 0;
+  padding: 120px 0;
   background: var(--bg);
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   height: 600px;
   right: -200px;
   bottom: -100px;
-  background: var(--accent-soft);
+  background: var(--gold-soft);
   filter: blur(90px);
   border-radius: 50%;
   pointer-events: none;
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-  margin-bottom: 60px;
+  margin-bottom: 64px;
 }
 
 .stat {
@@ -32,8 +32,7 @@
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 36px 24px 30px;
-  text-align: center;
+  padding: 32px 26px 28px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
@@ -44,16 +43,16 @@
   position: absolute;
   inset-inline: 0;
   top: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--grad-a), var(--gold), var(--grad-b));
+  height: 2px;
+  background: var(--gold);
   opacity: 0;
   transition: opacity var(--transition);
 }
 
 .stat:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--gold) 40%, var(--border));
 }
 
 .stat:hover::before {
@@ -61,36 +60,28 @@
 }
 
 .stat__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
+  display: block;
   font-size: 24px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
-  box-shadow: 0 10px 22px -8px rgba(124, 58, 237, 0.55);
-  margin-bottom: 18px;
+  color: var(--gold);
+  margin-bottom: 16px;
 }
 
 .stat__value {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5vw, 3.4rem);
-  font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 3.6rem);
+  font-weight: 600;
   line-height: 1.05;
-  background: linear-gradient(120deg, var(--grad-a), var(--grad-b));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--gold);
 }
 
 .stat__label {
   color: var(--text-muted);
-  font-weight: 500;
-  margin-top: 8px;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .why__reasons {
@@ -103,7 +94,7 @@
 .reason {
   position: relative;
   display: flex;
-  gap: 16px;
+  gap: 18px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -114,55 +105,54 @@
 }
 
 .reason:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  border-color: color-mix(in srgb, var(--gold) 40%, var(--border));
 }
 
 .reason__num {
   position: absolute;
-  top: 16px;
-  right: 20px;
+  top: 18px;
+  right: 24px;
   font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 700;
+  font-style: italic;
+  font-size: 20px;
   color: var(--gold);
-  letter-spacing: 0.1em;
 }
 
 .reason__icon {
   width: 52px;
   height: 52px;
-  border-radius: 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  color: var(--primary);
-  background: var(--primary-soft);
+  color: var(--gold);
+  background: var(--bg);
   flex-shrink: 0;
-  transition: color var(--transition), background var(--transition);
+  transition: border-color var(--transition);
 }
 
 .reason:hover .reason__icon {
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  border-color: var(--gold);
 }
 
 .reason h3 {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 6px;
 }
 
 .reason p {
   color: var(--text-muted);
   font-size: 14.5px;
-  padding-right: 24px;
+  padding-right: 28px;
 }
 
 @media (max-width: 900px) {
   .why {
-    padding: 84px 0;
+    padding: 88px 0;
   }
 
   .why__stats {

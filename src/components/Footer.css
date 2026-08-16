@@ -9,11 +9,12 @@
 .footer::before {
   content: '';
   position: absolute;
-  inset-inline: 0;
   top: -1px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--grad-a), var(--grad-b), transparent);
-  opacity: 0.7;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
 }
 
 .footer__inner {
@@ -28,17 +29,17 @@
 .footer__brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 19px;
+  font-weight: 600;
+  font-size: 20px;
   color: var(--text);
 }
 
 .footer__logo {
   height: 34px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px -4px rgba(34, 26, 44, 0.35);
+  border-radius: 6px;
+  border: 1px solid var(--border);
 }
 
 .footer p {

@@ -1,19 +1,19 @@
 .about {
   position: relative;
-  padding: 112px 0;
+  padding: 120px 0;
   background: var(--bg-soft);
   overflow: hidden;
 }
 
-.about::before {
+.about::after {
   content: '';
   position: absolute;
-  width: 520px;
-  height: 520px;
-  left: -180px;
-  top: 10%;
-  background: var(--primary-soft);
-  filter: blur(80px);
+  width: 480px;
+  height: 480px;
+  left: -160px;
+  bottom: -160px;
+  background: var(--gold-soft);
+  filter: blur(90px);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -22,7 +22,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1.25fr;
-  gap: 64px;
+  gap: 72px;
   align-items: start;
 }
 
@@ -31,68 +31,66 @@
 }
 
 .about__intro {
-  font-size: 21px;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.4;
   color: var(--text);
-  line-height: 1.45;
 }
 
 .about__text {
   color: var(--text-muted);
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .about__highlights {
   list-style: none;
-  margin: 30px 0 0;
+  margin: 34px 0 0;
   padding: 0;
   display: grid;
-  gap: 12px;
 }
 
 .about__highlights li {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 14px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--border);
   color: var(--text);
   font-weight: 500;
   font-size: 15px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 14px 18px;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), border-color var(--transition),
-    box-shadow var(--transition);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.about__highlights li:first-child {
+  border-top: 1px solid var(--border);
 }
 
 .about__highlights li:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
-  box-shadow: var(--shadow-md);
+  color: var(--gold);
+  transform: translateX(4px);
 }
 
 .about__check {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--gold);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: var(--gold);
+  font-size: 12px;
   flex-shrink: 0;
-  color: #ffffff;
-  font-size: 13px;
-  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
-  box-shadow: 0 6px 14px -6px rgba(124, 58, 237, 0.6);
 }
 
 @media (max-width: 900px) {
   .about {
-    padding: 84px 0;
+    padding: 88px 0;
   }
 
   .about__inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
 }

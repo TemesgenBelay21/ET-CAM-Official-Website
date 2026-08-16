@@ -1,6 +1,6 @@
 .contact {
   position: relative;
-  padding: 112px 0;
+  padding: 120px 0;
   background: var(--bg);
   overflow: hidden;
 }
@@ -12,7 +12,7 @@
   height: 560px;
   right: -200px;
   bottom: -120px;
-  background: var(--primary-soft);
+  background: var(--gold-soft);
   filter: blur(100px);
   border-radius: 50%;
   pointer-events: none;
@@ -33,12 +33,12 @@
 
 .contact__item {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   align-items: flex-start;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 22px;
+  padding: 24px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
@@ -47,25 +47,25 @@
 .contact__item:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  border-color: color-mix(in srgb, var(--gold) 40%, var(--border));
 }
 
 .contact__item-icon {
   width: 50px;
   height: 50px;
-  border-radius: 15px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
-  box-shadow: 0 10px 20px -8px rgba(124, 58, 237, 0.5);
+  color: var(--gold);
+  background: var(--bg);
   flex-shrink: 0;
 }
 
 .contact__item h3 {
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 4px;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .contact__item a:hover {
-  color: var(--primary);
+  color: var(--gold);
 }
 
 .contact__socials {
@@ -103,39 +103,19 @@
   background: var(--bg);
   border: 1px solid var(--border-strong);
   transition: color var(--transition), background var(--transition),
-    border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    border-color var(--transition), transform var(--transition);
 }
 
 .contact__social:hover {
-  transform: translateY(-4px) scale(1.05);
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.35);
-}
-
-.contact__social[data-name='Telegram']:hover {
-  background: #26a5e4;
-}
-
-.contact__social[data-name='LinkedIn']:hover {
-  background: #0a66c2;
-}
-
-.contact__social[data-name='TikTok']:hover {
-  background: #111111;
-}
-
-.contact__social[data-name='Instagram']:hover {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.contact__social[data-name='Twitter']:hover {
-  background: #14171a;
+  transform: translateY(-3px);
+  color: var(--gold);
+  border-color: var(--gold);
+  background: var(--gold-soft);
 }
 
 @media (max-width: 900px) {
   .contact {
-    padding: 84px 0;
+    padding: 88px 0;
   }
 
   .contact__grid {

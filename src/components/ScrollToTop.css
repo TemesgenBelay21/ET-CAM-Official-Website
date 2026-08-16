@@ -11,15 +11,15 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
-  box-shadow: 0 14px 30px -8px rgba(124, 58, 237, 0.55);
+  color: #1a1713;
+  background: var(--gold);
+  box-shadow: 0 14px 30px -10px rgba(201, 162, 39, 0.45);
   cursor: pointer;
   opacity: 0;
   transform: translateY(14px);
   pointer-events: none;
   transition: opacity var(--transition), transform var(--transition),
-    box-shadow var(--transition);
+    background-color var(--transition);
 }
 
 .scroll-top--visible {
@@ -30,5 +30,5 @@
 
 .scroll-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 36px -8px rgba(124, 58, 237, 0.65);
+  background: var(--gold-strong);
 }

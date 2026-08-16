@@ -15,7 +15,7 @@ const testimonials = [
     role: 'Owner',
     image: '/testimonial-images/dj-nani.jpg',
     quote:
-      'ET-CAM captured our brand’s aesthetic perfectly. The website looks premium, feels modern, and gives our customers a seamless shopping experience. We couldn’t be happier.',
+      'ET-CAM captured our brand’s aesthetic perfectly. The website looks premium, feels modern, and gives our customers a seamless shopping experience.',
   },
   {
     name: 'Eliyas',
@@ -29,7 +29,7 @@ const testimonials = [
     role: 'Client',
     image: '/testimonial-images/habtamu.jpg',
     quote:
-      'ET-CAM’s email marketing helped us connect with the right customers and increase repeat orders. Their targeted, creative approach improved engagement and built stronger customer loyalty for our meat house.',
+      'ET-CAM’s email marketing helped us connect with the right customers and increase repeat orders. Their creative approach built stronger customer loyalty.',
   },
 ]
 

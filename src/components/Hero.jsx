@@ -1,25 +1,24 @@
 import './Hero.css'
 
-const keywords = [
+const services = [
   'Social Media',
   'Web Design',
   'Branding',
   'SEO',
-  'Paid Ads',
-  'Content',
-  'AI Automation',
-  'Outreach',
+  'Paid Advertising',
+  'Content Production',
 ]
 
 function Hero() {
   return (
     <section id="home" className="hero">
-      <div className="hero__glow hero__glow--one" aria-hidden="true" />
-      <div className="hero__glow hero__glow--two" aria-hidden="true" />
+      <span className="hero__watermark" aria-hidden="true">
+        ET-CAM
+      </span>
       <div className="container hero__inner">
         <p className="hero__eyebrow">Ethiopian Creative Advertisement Media</p>
         <h1 className="hero__title">
-          We turn attention into <span className="hero__accent">revenue</span>.
+          We turn attention into <em className="hero__accent">revenue.</em>
         </h1>
         <p className="hero__lead">
           ET-CAM is a full-service digital marketing agency in Addis Ababa. Strategy, content,
@@ -42,16 +41,12 @@ function Hero() {
           <span>Hospitality · Lifestyle · Service Brands</span>
         </div>
       </div>
-      <div className="hero__marquee" aria-hidden="true">
-        <div className="hero__marquee-track">
-          {[0, 1].map((group) => (
-            <div className="hero__marquee-group" key={group}>
-              {keywords.map((keyword) => (
-                <span className="hero__marquee-item" key={keyword}>
-                  {keyword}
-                </span>
-              ))}
-            </div>
+      <div className="hero__strip">
+        <div className="container hero__strip-inner">
+          {services.map((item) => (
+            <span className="hero__strip-item" key={item}>
+              {item}
+            </span>
           ))}
         </div>
       </div>
