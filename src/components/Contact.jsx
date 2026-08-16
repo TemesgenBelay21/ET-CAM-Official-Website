@@ -7,28 +7,8 @@ import {
   FaXTwitter,
 } from 'react-icons/fa6'
 import Reveal from './Reveal'
+import { useLanguage } from '../i18n/LanguageContext'
 import './Contact.css'
-
-const details = [
-  {
-    icon: HiMapPin,
-    label: 'Our Location',
-    value: 'Addis Ababa, Nifas Silk-Lafto',
-    href: null,
-  },
-  {
-    icon: HiPhone,
-    label: 'Phone Numbers',
-    value: '+251-936113051, +251-969153870',
-    href: null,
-  },
-  {
-    icon: HiEnvelope,
-    label: 'Email Address',
-    value: 'etcamagency@gmail.com',
-    href: 'mailto:etcamagency@gmail.com',
-  },
-]
 
 const socials = [
   { name: 'Telegram', icon: FaTelegram, url: 'https://t.me/' },
@@ -39,17 +19,30 @@ const socials = [
 ]
 
 function Contact() {
+  const { t } = useLanguage()
+  const details = [
+    { icon: HiMapPin, label: t.contact.location, value: t.contact.locationValue, href: null },
+    {
+      icon: HiPhone,
+      label: t.contact.phone,
+      value: '+251-936113051, +251-969153870',
+      href: null,
+    },
+    {
+      icon: HiEnvelope,
+      label: t.contact.email,
+      value: 'etcamagency@gmail.com',
+      href: 'mailto:etcamagency@gmail.com',
+    },
+  ]
   return (
     <section id="contact" className="contact">
       <div className="container">
         <Reveal>
           <div className="section-head">
-            <p className="section-tag">Contact</p>
-            <h2 className="section-title">Let’s build something together.</h2>
-            <p className="section-sub">
-              Reach out to us through the details below. We’re available for inquiries,
-              collaborations, and consultations.
-            </p>
+            <p className="section-tag">{t.contact.tag}</p>
+            <h2 className="section-title">{t.contact.title}</h2>
+            <p className="section-sub">{t.contact.sub}</p>
           </div>
         </Reveal>
         <div className="contact__grid">

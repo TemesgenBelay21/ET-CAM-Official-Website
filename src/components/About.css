@@ -12,7 +12,7 @@
   height: 480px;
   left: -160px;
   bottom: -160px;
-  background: var(--gold-soft);
+  background: var(--primary-soft);
   filter: blur(90px);
   border-radius: 50%;
   pointer-events: none;
@@ -67,21 +67,22 @@
 }
 
 .about__highlights li:hover {
-  color: var(--gold);
+  color: var(--primary);
   transform: translateX(4px);
 }
 
 .about__check {
   width: 26px;
   height: 26px;
-  border: 1px solid var(--gold);
+  border: 1px solid var(--primary);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+  color: var(--primary);
   font-size: 12px;
   flex-shrink: 0;
+  background: var(--primary-soft);
 }
 
 @media (max-width: 900px) {

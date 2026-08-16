@@ -1,40 +1,25 @@
 import { HiCheck } from 'react-icons/hi2'
 import Reveal from './Reveal'
+import { useLanguage } from '../i18n/LanguageContext'
 import './About.css'
 
-const highlights = [
-  'One in-house team — from strategy to delivery',
-  'Every engagement customized to the client’s identity and goals',
-  'Creativity, technology, and market insight combined',
-]
-
 function About() {
+  const { t } = useLanguage()
   return (
     <section id="about" className="about">
       <div className="container">
         <div className="about__inner">
           <Reveal>
             <div className="section-head about__head">
-              <p className="section-tag">About Us</p>
-              <h2 className="section-title">
-                One team. Every channel. Measurable results.
-              </h2>
+              <p className="section-tag">{t.about.tag}</p>
+              <h2 className="section-title">{t.about.title}</h2>
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="about__intro">
-              ET-CAM is a results-driven digital marketing agency based in Addis Ababa, Ethiopia,
-              specializing in hospitality, lifestyle, and service-oriented brands.
-            </p>
-            <p className="about__text">
-              Content production, social media management, website development, branding, and SEO
-              are delivered under one in-house team — not fragmented across vendors — ensuring
-              consistent execution from strategy through delivery. Every engagement is customized
-              to the client’s identity, audience, and goals, combining creativity, technology, and
-              market insight to produce measurable results.
-            </p>
+            <p className="about__intro">{t.about.intro}</p>
+            <p className="about__text">{t.about.text}</p>
             <ul className="about__highlights">
-              {highlights.map((item) => (
+              {t.about.highlights.map((item) => (
                 <li key={item}>
                   <span className="about__check">
                     <HiCheck aria-hidden="true" />

@@ -12,7 +12,7 @@
   height: 600px;
   right: -200px;
   bottom: -100px;
-  background: var(--gold-soft);
+  background: var(--primary-soft);
   filter: blur(90px);
   border-radius: 50%;
   pointer-events: none;
@@ -30,6 +30,8 @@
   position: relative;
   overflow: hidden;
   background: var(--bg-elevated);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 32px 26px 28px;
@@ -44,7 +46,7 @@
   inset-inline: 0;
   top: 0;
   height: 2px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -52,7 +54,7 @@
 .stat:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--gold) 40%, var(--border));
+  border-color: var(--border-strong);
 }
 
 .stat:hover::before {
@@ -62,7 +64,7 @@
 .stat__icon {
   display: block;
   font-size: 24px;
-  color: var(--gold);
+  color: var(--primary);
   margin-bottom: 16px;
 }
 
@@ -72,7 +74,10 @@
   font-size: clamp(2.8rem, 5vw, 3.6rem);
   font-weight: 600;
   line-height: 1.05;
-  color: var(--gold);
+  background: linear-gradient(120deg, var(--text-grad-a), var(--text-grad-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .stat__label {
@@ -96,6 +101,8 @@
   display: flex;
   gap: 18px;
   background: var(--bg-elevated);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 26px 28px;
@@ -107,7 +114,7 @@
 .reason:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: color-mix(in srgb, var(--gold) 40%, var(--border));
+  border-color: var(--border-strong);
 }
 
 .reason__num {
@@ -115,9 +122,9 @@
   top: 18px;
   right: 24px;
   font-family: var(--font-display);
-  font-style: italic;
   font-size: 20px;
-  color: var(--gold);
+  color: var(--primary);
+  opacity: 0.45;
 }
 
 .reason__icon {
@@ -129,14 +136,15 @@
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  color: var(--gold);
+  color: var(--primary);
   background: var(--bg);
   flex-shrink: 0;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .reason:hover .reason__icon {
-  border-color: var(--gold);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px -8px var(--glow);
 }
 
 .reason h3 {

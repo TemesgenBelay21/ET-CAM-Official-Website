@@ -1,18 +1,10 @@
 import { useEffect, useState } from 'react'
 import { HiSun, HiMoon, HiBars3, HiXMark } from 'react-icons/hi2'
+import { useLanguage } from '../i18n/LanguageContext'
 import './Navbar.css'
 
-const links = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#why-us', label: 'Why Us' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#contact', label: 'Contact' },
-]
-
 function Navbar({ theme, onToggleTheme }) {
+  const { lang, toggleLang, t } = useLanguage()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -22,6 +14,16 @@ function Navbar({ theme, onToggleTheme }) {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const links = [
+    { href: '#home', label: t.nav.home },
+    { href: '#about', label: t.nav.about },
+    { href: '#why-us', label: t.nav.whyUs },
+    { href: '#services', label: t.nav.services },
+    { href: '#projects', label: t.nav.projects },
+    { href: '#testimonials', label: t.nav.testimonials },
+    { href: '#contact', label: t.nav.contact },
+  ]
 
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
@@ -45,9 +47,17 @@ function Navbar({ theme, onToggleTheme }) {
         <div className="navbar__actions">
           <button
             type="button"
+            className="lang-toggle"
+            onClick={toggleLang}
+            aria-label={lang === 'en' ? t.lang.toggleAm : t.lang.toggleEn}
+          >
+            {lang === 'en' ? 'አማ' : 'EN'}
+          </button>
+          <button
+            type="button"
             className="theme-toggle"
             onClick={onToggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            aria-label={theme === 'dark' ? t.theme.toLight : t.theme.toDark}
           >
             {theme === 'dark' ? <HiSun /> : <HiMoon />}
           </button>

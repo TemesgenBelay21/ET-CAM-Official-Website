@@ -1,53 +1,33 @@
+import { useLanguage } from '../i18n/LanguageContext'
 import './Hero.css'
 
-const services = [
-  'Social Media',
-  'Web Design',
-  'Branding',
-  'SEO',
-  'Paid Advertising',
-  'Content Production',
-]
-
 function Hero() {
+  const { t } = useLanguage()
   return (
     <section id="home" className="hero">
-      <span className="hero__watermark" aria-hidden="true">
-        ET-CAM
-      </span>
+      <div className="hero__orb hero__orb--one" aria-hidden="true" />
+      <div className="hero__orb hero__orb--two" aria-hidden="true" />
+      <div className="hero__grid" aria-hidden="true" />
       <div className="container hero__inner">
-        <p className="hero__eyebrow">Ethiopian Creative Advertisement Media</p>
+        <p className="hero__eyebrow">{t.hero.eyebrow}</p>
         <h1 className="hero__title">
-          We turn attention into <em className="hero__accent">revenue.</em>
+          {t.hero.titleStart} <em className="hero__accent">{t.hero.titleAccent}</em>
         </h1>
-        <p className="hero__lead">
-          ET-CAM is a full-service digital marketing agency in Addis Ababa. Strategy, content,
-          websites, and advertising — one in-house team built to grow your brand and deliver
-          measurable results.
-        </p>
+        <p className="hero__lead">{t.hero.lead}</p>
         <div className="hero__actions">
           <a href="#contact" className="btn btn--primary">
-            Get in Touch
+            {t.hero.ctaPrimary}
           </a>
           <a href="#services" className="btn btn--ghost">
-            Explore Services
+            {t.hero.ctaSecondary}
           </a>
         </div>
         <div className="hero__meta">
-          <span>Addis Ababa, Ethiopia</span>
+          <span>{t.hero.metaLocation}</span>
           <span className="hero__dot" aria-hidden="true">
             •
           </span>
-          <span>Hospitality · Lifestyle · Service Brands</span>
-        </div>
-      </div>
-      <div className="hero__strip">
-        <div className="container hero__strip-inner">
-          {services.map((item) => (
-            <span className="hero__strip-item" key={item}>
-              {item}
-            </span>
-          ))}
+          <span>{t.hero.metaNiches}</span>
         </div>
       </div>
     </section>

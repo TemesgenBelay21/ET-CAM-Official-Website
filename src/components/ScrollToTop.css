@@ -11,15 +11,14 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: #1a1713;
-  background: var(--gold);
-  box-shadow: 0 14px 30px -10px rgba(201, 162, 39, 0.45);
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  box-shadow: 0 14px 30px -10px var(--glow);
   cursor: pointer;
   opacity: 0;
   transform: translateY(14px);
   pointer-events: none;
-  transition: opacity var(--transition), transform var(--transition),
-    background-color var(--transition);
+  transition: opacity var(--transition), transform var(--transition), filter var(--transition);
 }
 
 .scroll-top--visible {
@@ -30,5 +29,5 @@
 
 .scroll-top:hover {
   transform: translateY(-3px);
-  background: var(--gold-strong);
+  filter: brightness(1.1);
 }

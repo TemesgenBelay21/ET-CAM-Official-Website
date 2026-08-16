@@ -12,7 +12,7 @@
   height: 620px;
   left: -220px;
   bottom: -140px;
-  background: var(--gold-soft);
+  background: var(--primary-soft);
   filter: blur(100px);
   border-radius: 50%;
   pointer-events: none;
@@ -28,6 +28,8 @@
 .service {
   position: relative;
   background: var(--bg-elevated);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 30px;
@@ -43,7 +45,7 @@
   inset-inline: 0;
   top: 0;
   height: 2px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s ease;
@@ -52,7 +54,7 @@
 .service:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: color-mix(in srgb, var(--gold) 40%, var(--border));
+  border-color: var(--border-strong);
 }
 
 .service:hover::before {
@@ -64,9 +66,8 @@
   top: 24px;
   right: 26px;
   font-family: var(--font-display);
-  font-style: italic;
   font-size: 18px;
-  color: var(--gold);
+  color: var(--primary);
   opacity: 0.7;
 }
 
@@ -79,14 +80,15 @@
   align-items: center;
   justify-content: center;
   font-size: 22px;
-  color: var(--gold);
+  color: var(--primary);
   background: var(--bg);
   margin-bottom: 22px;
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .service:hover .service__icon {
-  border-color: var(--gold);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px -8px var(--glow);
 }
 
 .service h3 {

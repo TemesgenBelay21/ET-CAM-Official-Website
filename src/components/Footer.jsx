@@ -1,6 +1,8 @@
+import { useLanguage } from '../i18n/LanguageContext'
 import './Footer.css'
 
 function Footer() {
+  const { t } = useLanguage()
   return (
     <footer className="footer">
       <div className="container footer__inner">
@@ -8,8 +10,8 @@ function Footer() {
           <img src="/logo-image/logo.png" alt="ET-CAM logo" className="footer__logo" />
           <span>ET-CAM</span>
         </div>
-        <p>Ethiopian Creative Advertisement Media — Addis Ababa, Ethiopia.</p>
-        <p>© {new Date().getFullYear()} ET-CAM. All rights reserved.</p>
+        <p>{t.footer.tagline}</p>
+        <p>© {new Date().getFullYear()} ET-CAM. {t.footer.rights}</p>
       </div>
     </footer>
   )

@@ -9,36 +9,16 @@ import {
   HiMapPin,
 } from 'react-icons/hi2'
 import Reveal from './Reveal'
+import { useLanguage } from '../i18n/LanguageContext'
 import './WhyChooseUs.css'
 
 const stats = [
-  { icon: HiBriefcase, value: 70, suffix: '+', label: 'Projects Delivered' },
-  { icon: HiCalendarDays, value: 2, suffix: '+', label: 'Years of Experience' },
-  { icon: HiHandThumbUp, value: 97, suffix: '%', label: 'Client Satisfaction' },
+  { icon: HiBriefcase, value: 70, suffix: '+', label: 'stats0' },
+  { icon: HiCalendarDays, value: 2, suffix: '+', label: 'stats1' },
+  { icon: HiHandThumbUp, value: 97, suffix: '%', label: 'stats2' },
 ]
 
-const reasons = [
-  {
-    icon: HiUsers,
-    title: 'In-House Full-Service Team',
-    text: 'Strategy, content, tech, and ads — one team, not fragmented vendors.',
-  },
-  {
-    icon: HiChartBar,
-    title: 'Measurable, Results-Driven',
-    text: 'Every campaign is tied to metrics you can see and track.',
-  },
-  {
-    icon: HiAdjustmentsHorizontal,
-    title: 'Tailored Per Client',
-    text: 'No templates — each strategy is built around your brand and audience.',
-  },
-  {
-    icon: HiMapPin,
-    title: 'Local Market Expertise',
-    text: 'Rooted in Addis Ababa, fluent with local and international audiences.',
-  },
-]
+const reasonIcons = [HiUsers, HiChartBar, HiAdjustmentsHorizontal, HiMapPin]
 
 function Counter({ value, suffix }) {
   const ref = useRef(null)
@@ -79,16 +59,21 @@ function Counter({ value, suffix }) {
 }
 
 function WhyChooseUs() {
+  const { t } = useLanguage()
+  const labels = t.why.stats
+  const reasons = t.why.reasons.map((reason, index) => ({
+    icon: reasonIcons[index],
+    title: reason.title,
+    text: reason.text,
+  }))
   return (
     <section id="why-us" className="why">
       <div className="container">
         <Reveal>
           <div className="section-head">
-            <p className="section-tag">Why Choose Us</p>
-            <h2 className="section-title">Built for results, measured in impact.</h2>
-            <p className="section-sub">
-              Proven numbers, and the approach behind them.
-            </p>
+            <p className="section-tag">{t.why.tag}</p>
+            <h2 className="section-title">{t.why.title}</h2>
+            <p className="section-sub">{t.why.sub}</p>
           </div>
         </Reveal>
 
@@ -100,7 +85,7 @@ function WhyChooseUs() {
                 <div className="stat">
                   <Icon className="stat__icon" aria-hidden="true" />
                   <Counter value={stat.value} suffix={stat.suffix} />
-                  <p className="stat__label">{stat.label}</p>
+                  <p className="stat__label">{labels[index]}</p>
                 </div>
               </Reveal>
             )
