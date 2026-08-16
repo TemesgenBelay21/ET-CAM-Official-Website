@@ -1,5 +1,16 @@
 import './Hero.css'
 
+const keywords = [
+  'Social Media',
+  'Web Design',
+  'Branding',
+  'SEO',
+  'Paid Ads',
+  'Content',
+  'AI Automation',
+  'Outreach',
+]
+
 function Hero() {
   return (
     <section id="home" className="hero">
@@ -29,6 +40,19 @@ function Hero() {
             •
           </span>
           <span>Hospitality · Lifestyle · Service Brands</span>
+        </div>
+      </div>
+      <div className="hero__marquee" aria-hidden="true">
+        <div className="hero__marquee-track">
+          {[0, 1].map((group) => (
+            <div className="hero__marquee-group" key={group}>
+              {keywords.map((keyword) => (
+                <span className="hero__marquee-item" key={keyword}>
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>

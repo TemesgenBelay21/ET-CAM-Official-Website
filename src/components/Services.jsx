@@ -85,6 +85,9 @@ function Services() {
             return (
               <Reveal key={service.title} delay={(index % 3) * 100}>
                 <article className="service">
+                  <span className="service__num">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                   <span className="service__icon">
                     <Icon aria-hidden="true" />
                   </span>

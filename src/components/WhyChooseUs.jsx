@@ -113,6 +113,9 @@ function WhyChooseUs() {
             return (
               <Reveal key={reason.title} delay={(index % 2) * 120}>
                 <div className="reason">
+                  <span className="reason__num">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                   <span className="reason__icon">
                     <Icon aria-hidden="true" />
                   </span>

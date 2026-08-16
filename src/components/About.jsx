@@ -1,4 +1,4 @@
-import { HiCheckCircle } from 'react-icons/hi2'
+import { HiCheck } from 'react-icons/hi2'
 import Reveal from './Reveal'
 import './About.css'
 
@@ -36,7 +36,9 @@ function About() {
             <ul className="about__highlights">
               {highlights.map((item) => (
                 <li key={item}>
-                  <HiCheckCircle aria-hidden="true" />
+                  <span className="about__check">
+                    <HiCheck aria-hidden="true" />
+                  </span>
                   <span>{item}</span>
                 </li>
               ))}

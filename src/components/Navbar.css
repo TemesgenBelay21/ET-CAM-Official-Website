@@ -11,8 +11,9 @@
 }
 
 .navbar--scrolled {
-  background: color-mix(in srgb, var(--bg) 85%, transparent);
-  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
   border-bottom-color: var(--border);
   box-shadow: var(--shadow-sm);
 }
@@ -27,7 +28,7 @@
 .navbar__brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 22px;
@@ -38,22 +39,23 @@
 .navbar__logo {
   height: 40px;
   width: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px -4px rgba(34, 26, 44, 0.3);
 }
 
 .navbar__nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   margin-inline-start: auto;
 }
 
 .navbar__link {
   color: var(--text-muted);
   font-weight: 500;
-  font-size: 15px;
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
   transition: color var(--transition), background-color var(--transition);
 }
 
@@ -73,22 +75,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   border: 1px solid var(--border-strong);
   background: var(--bg-elevated);
   color: var(--text);
-  font-size: 18px;
+  font-size: 17px;
+  cursor: pointer;
   transition: color var(--transition), border-color var(--transition),
-    transform var(--transition);
+    transform var(--transition), box-shadow var(--transition);
 }
 
 .theme-toggle:hover,
 .navbar__burger:hover {
   color: var(--primary);
   border-color: var(--primary);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -8px rgba(124, 58, 237, 0.5);
+  transform: translateY(-2px);
 }
 
 .navbar__burger {
@@ -102,9 +106,9 @@
 
   .navbar__nav {
     position: absolute;
-    top: var(--nav-height);
-    left: 12px;
-    right: 12px;
+    top: calc(var(--nav-height) + 8px);
+    left: 16px;
+    right: 16px;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
@@ -114,7 +118,7 @@
     padding: 12px;
     box-shadow: var(--shadow-lg);
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
@@ -126,6 +130,6 @@
   }
 
   .navbar__link {
-    padding: 12px 14px;
+    padding: 13px 16px;
   }
 }

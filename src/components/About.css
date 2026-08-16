@@ -1,11 +1,27 @@
 .about {
-  padding: 96px 0;
-  background: var(--bg);
+  position: relative;
+  padding: 112px 0;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: -180px;
+  top: 10%;
+  background: var(--primary-soft);
+  filter: blur(80px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .about__inner {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1.25fr;
   gap: 64px;
   align-items: start;
 }
@@ -15,10 +31,10 @@
 }
 
 .about__intro {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .about__text {
@@ -28,29 +44,51 @@
 
 .about__highlights {
   list-style: none;
-  margin: 28px 0 0;
+  margin: 30px 0 0;
   padding: 0;
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
 .about__highlights li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   color: var(--text);
   font-weight: 500;
+  font-size: 15px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), border-color var(--transition),
+    box-shadow var(--transition);
 }
 
-.about__highlights svg {
-  color: var(--primary);
-  font-size: 22px;
+.about__highlights li:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--border));
+  box-shadow: var(--shadow-md);
+}
+
+.about__check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  color: #ffffff;
+  font-size: 13px;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  box-shadow: 0 6px 14px -6px rgba(124, 58, 237, 0.6);
 }
 
 @media (max-width: 900px) {
   .about {
-    padding: 72px 0;
+    padding: 84px 0;
   }
 
   .about__inner {

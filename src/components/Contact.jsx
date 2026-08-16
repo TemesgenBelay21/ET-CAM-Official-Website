@@ -86,6 +86,7 @@ function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact__social"
+                    data-name={social.name}
                     aria-label={social.name}
                   >
                     <Icon aria-hidden="true" />

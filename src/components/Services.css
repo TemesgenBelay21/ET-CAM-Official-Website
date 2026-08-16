@@ -1,9 +1,25 @@
 .services {
-  padding: 96px 0;
-  background: var(--bg);
+  position: relative;
+  padding: 112px 0;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  left: -220px;
+  bottom: -140px;
+  background: var(--primary-soft);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .services__grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -26,46 +42,61 @@
   inset-inline: 0;
   top: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
   opacity: 0;
-  transition: opacity var(--transition);
+  transform: scaleX(0.6);
+  transition: opacity var(--transition), transform var(--transition);
 }
 
 .service:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
 }
 
 .service:hover::before {
   opacity: 1;
+  transform: scaleX(1);
+}
+
+.service__num {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--text-muted) 45%, transparent);
+  letter-spacing: 0.08em;
 }
 
 .service__icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: var(--primary);
-  background: var(--primary-soft);
-  margin-bottom: 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  box-shadow: 0 10px 22px -8px rgba(124, 58, 237, 0.5);
+  margin-bottom: 20px;
 }
 
 .service h3 {
   font-size: 18px;
   margin-bottom: 8px;
+  padding-right: 34px;
 }
 
 .service p {
   color: var(--text-muted);
-  font-size: 15px;
+  font-size: 14.5px;
 }
 
 @media (max-width: 900px) {
   .services {
-    padding: 72px 0;
+    padding: 84px 0;
   }
 }

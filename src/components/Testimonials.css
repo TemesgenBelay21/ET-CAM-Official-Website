@@ -1,11 +1,27 @@
 .testimonials {
-  padding: 96px 0;
-  background: var(--bg);
+  position: relative;
+  padding: 112px 0;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  left: -180px;
+  top: 20%;
+  background: var(--accent-soft);
+  filter: blur(90px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .testimonials__grid {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 20px;
 }
 
@@ -17,23 +33,30 @@
   padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
 }
 
 .testimonial:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+}
+
+.testimonial__stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+  font-size: 14px;
 }
 
 .testimonial__quote {
   position: relative;
   color: var(--text);
   font-size: 15.5px;
-  line-height: 1.6;
+  line-height: 1.65;
   flex-grow: 1;
 }
 
@@ -41,24 +64,32 @@
   content: '\201C';
   display: block;
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 52px;
   line-height: 1;
-  color: var(--accent);
-  margin-bottom: 8px;
+  color: transparent;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 4px;
 }
 
 .testimonial__author {
   display: flex;
   align-items: center;
   gap: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
 }
 
 .testimonial__avatar {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  background-origin: border-box;
+  box-shadow: 0 6px 16px -6px rgba(124, 58, 237, 0.5);
 }
 
 .testimonial__name {
@@ -74,6 +105,6 @@
 
 @media (max-width: 900px) {
   .testimonials {
-    padding: 72px 0;
+    padding: 84px 0;
   }
 }
