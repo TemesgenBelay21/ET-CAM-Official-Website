@@ -9,10 +9,39 @@
   transform: none;
 }
 
+section {
+  position: relative;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(240px, 32vw);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0;
+  transform: translateX(-50%) scaleX(0.2);
+  transition: opacity 0.8s ease, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+section.section--entered::after {
+  opacity: 0.8;
+  transform: translateX(-50%) scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+
+  section::after {
+    opacity: 0.8;
+    transform: translateX(-50%) scaleX(1);
     transition: none;
   }
 }

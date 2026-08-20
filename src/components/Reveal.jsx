@@ -11,6 +11,7 @@ function Reveal({ children, delay = 0, as: Tag = 'div', className = '' }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('is-visible')
+          el.closest('section')?.classList.add('section--entered')
           observer.disconnect()
         }
       },

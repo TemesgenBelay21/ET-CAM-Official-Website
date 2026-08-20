@@ -7,6 +7,7 @@ function Navbar({ theme, onToggleTheme }) {
   const { lang, toggleLang, t } = useLanguage()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -15,11 +16,30 @@ function Navbar({ theme, onToggleTheme }) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    const sections = ['home', 'about', 'industries', 'why-us', 'services', 'process', 'projects', 'testimonials', 'faq', 'contact']
+      .map((id) => document.getElementById(id))
+      .filter(Boolean)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+        if (visible) setActiveSection(visible.target.id)
+      },
+      { rootMargin: '-30% 0px -55% 0px', threshold: [0.1, 0.3, 0.6] },
+    )
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
   const links = [
     { href: '#home', label: t.nav.home },
     { href: '#about', label: t.nav.about },
+    { href: '#industries', label: t.nav.industries },
     { href: '#why-us', label: t.nav.whyUs },
     { href: '#services', label: t.nav.services },
+    { href: '#process', label: t.nav.process },
     { href: '#projects', label: t.nav.projects },
     { href: '#testimonials', label: t.nav.testimonials },
     { href: '#faq', label: t.nav.faq },
@@ -38,7 +58,7 @@ function Navbar({ theme, onToggleTheme }) {
             <a
               key={link.href}
               href={link.href}
-              className="navbar__link"
+              className={`navbar__link ${activeSection === link.href.slice(1) ? 'navbar__link--active' : ''}`}
               onClick={() => setOpen(false)}
             >
               {link.label}
