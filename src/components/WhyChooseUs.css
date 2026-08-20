@@ -1,9 +1,7 @@
 .why {
   position: relative;
   padding: 120px 0;
-  background:
-    linear-gradient(90deg, color-mix(in srgb, var(--bg) 88%, transparent), color-mix(in srgb, var(--bg) 76%, transparent)),
-    url('/hero image/why_choose_us_bg.jpeg') center / cover no-repeat;
+  background: var(--bg);
   overflow: hidden;
 }
 
