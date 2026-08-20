@@ -116,7 +116,8 @@ h4 {
 
 p {
   margin: 0;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 a {
@@ -186,7 +187,7 @@ button {
 .section-sub {
   color: var(--text-muted);
   margin-top: 14px;
-  font-size: 21px;
+  font-size: 23px;
 }
 
 .btn {
