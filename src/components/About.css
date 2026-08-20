@@ -33,14 +33,14 @@
 .about__intro {
   color: var(--text-muted);
   margin-top: 28px;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.7;
 }
 
 .about__text {
   color: var(--text-muted);
   margin-top: 18px;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.7;
 }
 
