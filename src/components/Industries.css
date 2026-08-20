@@ -1,6 +1,23 @@
 .industries {
+  position: relative;
   padding: 120px 0;
-  background: var(--bg);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 94%, transparent), color-mix(in srgb, var(--bg) 76%, transparent)),
+    url('/hero image/industries_bg.jpg') center / cover no-repeat;
+  overflow: hidden;
+}
+
+.industries::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 70%, transparent), color-mix(in srgb, var(--bg) 90%, transparent));
+  pointer-events: none;
+}
+
+.industries > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .industries__grid {
@@ -36,7 +53,7 @@
 
 .industry p {
   color: var(--text-muted);
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.65;
 }
 
@@ -44,7 +61,7 @@
   display: block;
   margin-top: 16px;
   color: var(--primary);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
