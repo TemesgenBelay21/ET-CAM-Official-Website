@@ -21,8 +21,8 @@
 .testimonials__grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
   align-items: stretch;
 }
 
@@ -37,10 +37,10 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 24px 30px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   height: 100%;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition),
@@ -62,8 +62,8 @@
 
 .testimonial__quote {
   color: var(--text);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.55;
   flex-grow: 1;
 }
 
@@ -105,11 +105,15 @@
 
 .testimonial__role {
   color: var(--text-muted);
-  font-size: 13px;
+  font-size: 16px;
 }
 
 @media (max-width: 900px) {
   .testimonials {
     padding: 88px 0;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
   }
 }

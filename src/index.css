@@ -36,7 +36,7 @@
   --radius-lg: 24px;
   --radius-pill: 999px;
 
-  --max-width: 1140px;
+  --max-width: 1280px;
   --nav-height: 76px;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -88,7 +88,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--text);
   background: var(--bg);
@@ -116,6 +116,7 @@ h4 {
 
 p {
   margin: 0;
+  font-size: 23px;
 }
 
 a {
@@ -144,7 +145,7 @@ button {
 }
 
 .section-head {
-  max-width: 700px;
+  max-width: 780px;
   margin-bottom: 52px;
 }
 
@@ -185,7 +186,7 @@ button {
 .section-sub {
   color: var(--text-muted);
   margin-top: 14px;
-  font-size: 17px;
+  font-size: 24px;
 }
 
 .btn {

@@ -32,15 +32,15 @@
 
 .about__intro {
   color: var(--text-muted);
-  margin-top: 0;
-  font-size: 16px;
+  margin-top: 28px;
+  font-size: 23px;
   line-height: 1.7;
 }
 
 .about__text {
   color: var(--text-muted);
   margin-top: 18px;
-  font-size: 16px;
+  font-size: 23px;
   line-height: 1.7;
 }
 
