@@ -6,8 +6,8 @@
   padding: calc(var(--nav-height) + 56px) 0 88px;
   overflow: hidden;
   background:
-    linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 92%, transparent) 48%, color-mix(in srgb, var(--bg) 28%, transparent) 100%),
-    url('/hero image/hero_image.jpg') right center / min(48%, 620px) auto no-repeat,
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 28%, transparent) 0%, color-mix(in srgb, var(--bg) 92%, transparent) 52%, var(--bg) 100%),
+    url('/hero image/hero_image.jpg') left center / min(48%, 620px) auto no-repeat,
     radial-gradient(900px 480px at 85% -12%, var(--accent-soft), transparent 60%),
     radial-gradient(760px 460px at -8% 110%, var(--primary-soft), transparent 60%),
     var(--bg);
