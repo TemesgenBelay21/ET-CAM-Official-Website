@@ -12,12 +12,13 @@ function About() {
             <div className="section-head about__head">
               <p className="section-tag">{t.about.tag}</p>
               <h2 className="section-title">{t.about.title}</h2>
+              <p className="about__intro">{t.about.paragraphs[0]}</p>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <div className="about__copy">
-              {t.about.paragraphs.map((paragraph, index) => (
-                <p key={paragraph} className={index === 0 ? 'about__intro' : 'about__text'}>
+              {t.about.paragraphs.slice(1, -1).map((paragraph) => (
+                <p key={paragraph} className="about__text">
                   {paragraph}
                 </p>
               ))}

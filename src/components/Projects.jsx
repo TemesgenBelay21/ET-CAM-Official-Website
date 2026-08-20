@@ -6,36 +6,43 @@ const projects = [
   {
     title: 'Harmony Furniture',
     typeKey: 'website',
+    resultKey: 'harmony',
     image: '/project-images/harmony-furniture.jpg',
   },
   {
     title: 'Joy Burger',
     typeKey: 'social',
+    resultKey: 'joy',
     image: '/project-images/joy-burger.jpg',
   },
   {
     title: 'Mesti Café and Restaurant',
     typeKey: 'social',
+    resultKey: 'mesti',
     image: '/project-images/mesti-cafe.jpg',
   },
   {
     title: 'NT Fashion',
     typeKey: 'website',
+    resultKey: 'nt',
     image: '/project-images/nt-fashion.jpg',
   },
   {
     title: '251 Delivery',
     typeKey: 'content',
+    resultKey: 'delivery',
     image: '/project-images/251-delivery.jpg',
   },
   {
     title: 'Eastern Flower Corporation',
     typeKey: 'event',
+    resultKey: 'eastern',
     image: '/project-images/eastern-flower.jpg',
   },
   {
     title: 'Akkoo Coffee',
     typeKey: 'paid',
+    resultKey: 'akkoo',
     image: '/project-images/akkoo-coffee.jpg',
   },
 ]
@@ -60,6 +67,7 @@ function Projects() {
                 <figcaption className="project__overlay">
                   <span>{t.projects.types[project.typeKey]}</span>
                   <h3>{project.title}</h3>
+                  <p>{t.projects.results[project.resultKey]}</p>
                 </figcaption>
               </figure>
             </Reveal>

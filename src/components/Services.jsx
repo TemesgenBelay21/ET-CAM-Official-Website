@@ -47,6 +47,24 @@ const icons = [
   HiDocumentText,
 ]
 
+const serviceGroups = [
+  [0],
+  [1],
+  [2],
+  [3, 16],
+  [4],
+  [5, 7],
+  [6],
+  [8],
+  [9, 10],
+  [11, 12],
+  [13, 14],
+  [15],
+  [17],
+  [18],
+  [19],
+]
+
 function Services() {
   const { t } = useLanguage()
   return (
@@ -60,8 +78,13 @@ function Services() {
           </div>
         </Reveal>
         <div className="services__grid">
-          {t.services.items.map((service, index) => {
-            const Icon = icons[index]
+          {serviceGroups.map((group, index) => {
+            const services = group.map((serviceIndex) => t.services.items[serviceIndex])
+            const service = {
+              title: services.map((item) => item.title.replace(/\s+and\s+/g, ' / ')).join(' / '),
+              text: t.services.summaries[index],
+            }
+            const Icon = icons[group[0]]
             return (
               <Reveal key={service.title} delay={(index % 3) * 100}>
                 <article className="service">
