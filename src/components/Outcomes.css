@@ -17,7 +17,7 @@
 
 .outcome > svg { color: var(--primary); font-size: 24px; margin-bottom: 18px; }
 .outcome h3 { font-size: 20px; line-height: 1.25; margin-bottom: 10px; }
-.outcome p { color: var(--text-muted); font-size: 22px; line-height: 1.65; }
+.outcome p { color: var(--text-muted); font-size: 19px; line-height: 1.65; }
 
 @media (max-width: 1000px) {
   .outcomes { padding: 88px 0; }

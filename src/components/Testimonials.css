@@ -62,7 +62,7 @@
 
 .testimonial__quote {
   color: var(--text);
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.55;
   flex-grow: 1;
 }
@@ -99,13 +99,13 @@
 
 .testimonial__name {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 12px;
   color: var(--text);
 }
 
 .testimonial__role {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 13px;
 }
 
 @media (max-width: 900px) {

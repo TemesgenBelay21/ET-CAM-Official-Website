@@ -5,6 +5,6 @@
 .process__number { display: block; margin-bottom: 24px; color: var(--primary); font-size: 13px; font-weight: 700; letter-spacing: .12em; }
 .process__item > svg { color: var(--primary); font-size: 25px; margin-bottom: 18px; }
 .process__item h3 { font-size: 21px; line-height: 1.25; margin-bottom: 10px; }
-.process__item p { color: var(--text-muted); font-size: 23px; line-height: 1.65; margin-top: auto; }
+.process__item p { color: var(--text-muted); font-size: 20px; line-height: 1.65; margin-top: auto; }
 @media (max-width: 900px) { .process { padding: 88px 0; } .process__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .process__grid { grid-template-columns: 1fr; } }

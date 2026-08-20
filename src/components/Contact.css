@@ -80,7 +80,7 @@
 .contact__item p,
 .contact__item a {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 13px;
   word-break: break-word;
 }
 

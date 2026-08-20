@@ -90,7 +90,7 @@
 }
 
 .hero__lead {
-  font-size: clamp(1.35rem, 2vw, 1.45rem);
+  font-size: clamp(1.16rem, 2vw, 1.26rem);
   color: var(--text-muted);
   max-width: 640px;
   margin-bottom: 40px;
