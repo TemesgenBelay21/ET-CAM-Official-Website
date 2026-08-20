@@ -1,4 +1,3 @@
-import { HiCheck } from 'react-icons/hi2'
 import Reveal from './Reveal'
 import { useLanguage } from '../i18n/LanguageContext'
 import './About.css'
@@ -16,18 +15,13 @@ function About() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="about__intro">{t.about.intro}</p>
-            <p className="about__text">{t.about.text}</p>
-            <ul className="about__highlights">
-              {t.about.highlights.map((item) => (
-                <li key={item}>
-                  <span className="about__check">
-                    <HiCheck aria-hidden="true" />
-                  </span>
-                  <span>{item}</span>
-                </li>
+            <div className="about__copy">
+              {t.about.paragraphs.map((paragraph, index) => (
+                <p key={paragraph} className={index === 0 ? 'about__intro' : 'about__text'}>
+                  {paragraph}
+                </p>
               ))}
-            </ul>
+            </div>
           </Reveal>
         </div>
       </div>

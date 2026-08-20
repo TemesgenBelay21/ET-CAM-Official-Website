@@ -11,10 +11,11 @@ export function LanguageProvider({ children }) {
   })
 
   useEffect(() => {
+    const currentTranslations = translations[lang] || translations.en
     document.documentElement.setAttribute('lang', lang)
-    document.title = translations[lang].meta.title
+    document.title = currentTranslations.meta.title
     const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', translations[lang].meta.description)
+    if (meta) meta.setAttribute('content', currentTranslations.meta.description)
     localStorage.setItem(LANG_KEY, lang)
   }, [lang])
 
@@ -25,7 +26,7 @@ export function LanguageProvider({ children }) {
   const value = useMemo(
     () => ({
       lang,
-      t: translations[lang],
+      t: translations[lang] || translations.en,
       setLang,
       toggleLang,
     }),

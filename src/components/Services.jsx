@@ -9,6 +9,16 @@ import {
   HiCpuChip,
   HiCalendarDays,
   HiEnvelope,
+  HiBuildingStorefront,
+  HiChatBubbleLeftRight,
+  HiUserGroup,
+  HiDevicePhoneMobile,
+  HiChartBarSquare,
+  HiPencilSquare,
+  HiShieldCheck,
+  HiSpeakerWave,
+  HiRectangleGroup,
+  HiDocumentText,
 } from 'react-icons/hi2'
 import Reveal from './Reveal'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -25,6 +35,16 @@ const icons = [
   HiCpuChip,
   HiCalendarDays,
   HiEnvelope,
+  HiBuildingStorefront,
+  HiChatBubbleLeftRight,
+  HiUserGroup,
+  HiDevicePhoneMobile,
+  HiChartBarSquare,
+  HiPencilSquare,
+  HiShieldCheck,
+  HiSpeakerWave,
+  HiRectangleGroup,
+  HiDocumentText,
 ]
 
 function Services() {

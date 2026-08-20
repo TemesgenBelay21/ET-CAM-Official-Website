@@ -6,7 +6,7 @@ import {
   HiUsers,
   HiChartBar,
   HiAdjustmentsHorizontal,
-  HiMapPin,
+  HiArrowsRightLeft,
 } from 'react-icons/hi2'
 import Reveal from './Reveal'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -18,7 +18,7 @@ const stats = [
   { icon: HiHandThumbUp, value: 97, suffix: '%', label: 'stats2' },
 ]
 
-const reasonIcons = [HiUsers, HiChartBar, HiAdjustmentsHorizontal, HiMapPin]
+const reasonIcons = [HiUsers, HiChartBar, HiAdjustmentsHorizontal, HiArrowsRightLeft, HiBriefcase]
 
 function Counter({ value, suffix }) {
   const ref = useRef(null)

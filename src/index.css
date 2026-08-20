@@ -1,6 +1,6 @@
 :root {
   --font-body: 'Inter', 'Noto Sans Ethiopic', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Space Grotesk', 'Noto Sans Ethiopic', system-ui, sans-serif;
+  --font-display: var(--font-body);
 
   --primary: #1e88f0;
   --primary-strong: #0b5fcc;
@@ -178,6 +178,8 @@ button {
 
 .section-title {
   font-size: clamp(2rem, 4.2vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .section-sub {

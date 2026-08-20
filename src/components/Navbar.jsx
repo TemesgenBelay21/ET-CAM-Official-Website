@@ -22,6 +22,7 @@ function Navbar({ theme, onToggleTheme }) {
     { href: '#services', label: t.nav.services },
     { href: '#projects', label: t.nav.projects },
     { href: '#testimonials', label: t.nav.testimonials },
+    { href: '#faq', label: t.nav.faq },
     { href: '#contact', label: t.nav.contact },
   ]
 

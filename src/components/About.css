@@ -31,16 +31,17 @@
 }
 
 .about__intro {
-  font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--text);
+  color: var(--text-muted);
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .about__text {
   color: var(--text-muted);
   margin-top: 18px;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .about__highlights {
