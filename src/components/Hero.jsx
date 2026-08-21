@@ -32,7 +32,12 @@ function Hero() {
           </div>
         </div>
         <div className="hero__visual">
-          <img src="/hero image/hero_image.jpg" alt="ET-CAM brand visual" />
+          <img
+            src="/hero image/hero_image.jpg"
+            alt="ET-CAM brand visual"
+            fetchPriority="high"
+            loading="eager"
+          />
         </div>
       </div>
     </section>

@@ -3,29 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo-image/logo.png" />
+    <link rel="canonical" href="https://et-cam-official-website.vercel.app/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5faff" />
+    <meta name="author" content="ET-CAM" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta
       name="description"
-      content="ET-CAM (Ethiopian Creative Advertisement Media) is a results-driven digital marketing agency in Addis Ababa. Social media, content, websites, branding, and SEO under one in-house team."
-    />
+      content="ET-CAM (Ethiopian Creative Advertisement Media) is a results-driven digital marketing agency in Addis Ababa. Social media, content, websites, branding, and SEO under one in-house team." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ET-CAM" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:title"
+      content="ET-CAM | Ethiopian Creative Advertisement Media" />
+    <meta
+      property="og:description"
+      content="A full-service digital marketing agency in Addis Ababa helping hospitality, lifestyle, retail, and service brands grow." />
+    <meta
+      property="og:url"
+      content="https://et-cam-official-website.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://et-cam-official-website.vercel.app/hero%20image/hero_image.jpg" />
+    <meta
+      property="og:image:alt"
+      content="ET-CAM Ethiopian Creative Advertisement Media" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ET-CAM | Ethiopian Creative Advertisement Media" />
+    <meta
+      name="twitter:description"
+      content="Strategy, content, websites, branding, advertising, and automation from one in-house team." />
+    <meta
+      name="twitter:image"
+      content="https://et-cam-official-website.vercel.app/hero%20image/hero_image.jpg" />
     <title>ET-CAM | Ethiopian Creative Advertisement Media</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "url": "https://et-cam-official-website.vercel.app/",
+        "name": "ET-CAM (Ethiopian Creative Advertisement Media)",
+        "description": "Full-service digital marketing agency in Addis Ababa providing social media, content production, web development, branding, advertising, SEO, and marketing automation.",
+        "image": "https://et-cam-official-website.vercel.app/hero%20image/hero_image.jpg",
+        "telephone": "+251-936113051",
+        "email": "etcamagency@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Addis Ababa",
+          "addressRegion": "Nifas Silk-Lafto",
+          "addressCountry": "ET"
+        },
+        "areaServed": "Ethiopia",
+        "knowsLanguage": ["en", "am"]
+      }
+    </script>
     <script>
-      ;(function () {
-        var stored = localStorage.getItem('et-cam-theme')
+      (function () {
+        var stored = localStorage.getItem("et-cam-theme");
         if (
-          stored === 'dark' ||
-          (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          stored === "dark" ||
+          (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
-          document.documentElement.setAttribute('data-theme', 'dark')
+          document.documentElement.setAttribute("data-theme", "dark");
         }
-      })()
+      })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
