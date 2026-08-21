@@ -47,7 +47,7 @@ function Navbar({ theme, onToggleTheme }) {
   ]
 
   return (
-    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <header className={`navbar navbar--${lang} ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <a href="#home" className="navbar__brand" onClick={() => setOpen(false)}>
           <img src="/logo-image/logo.png" alt="ET-CAM logo" className="navbar__logo" />
