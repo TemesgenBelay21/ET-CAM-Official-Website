@@ -20,6 +20,9 @@
 
 .about__inner {
   position: relative;
+}
+
+.about__columns {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   gap: 72px;
@@ -27,12 +30,13 @@
 }
 
 .about__head {
-  margin-bottom: 0;
+  max-width: 860px;
+  margin-bottom: 42px;
 }
 
 .about__intro {
   color: var(--text-muted);
-  margin-top: 28px;
+  margin-top: 0;
   font-size: 19px;
   line-height: 1.7;
 }
@@ -91,7 +95,7 @@
     padding: 88px 0;
   }
 
-  .about__inner {
+  .about__columns {
     grid-template-columns: 1fr;
     gap: 36px;
   }

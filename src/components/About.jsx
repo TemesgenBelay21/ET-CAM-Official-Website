@@ -12,18 +12,22 @@ function About() {
             <div className="section-head about__head">
               <p className="section-tag">{t.about.tag}</p>
               <h2 className="section-title">{t.about.title}</h2>
+            </div>
+          </Reveal>
+          <div className="about__columns">
+            <Reveal delay={120}>
               <p className="about__intro">{t.about.paragraphs[0]}</p>
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="about__copy">
-              {t.about.paragraphs.slice(1, -1).map((paragraph) => (
-                <p key={paragraph} className="about__text">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="about__copy">
+                {t.about.paragraphs.slice(1, -1).map((paragraph) => (
+                  <p key={paragraph} className="about__text">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>
