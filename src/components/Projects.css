@@ -89,7 +89,6 @@
 .project__overlay p {
   max-width: 340px;
   color: rgba(242, 239, 233, 0.78);
-  font-size: 18px;
   line-height: 1.45;
 }
 
@@ -98,6 +97,12 @@
     padding: 88px 0;
   }
 
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
   .projects__grid {
     grid-template-columns: 1fr;
   }

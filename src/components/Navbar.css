@@ -121,22 +121,14 @@
   display: none;
 }
 
-@media (max-width: 1120px) and (min-width: 901px) {
-  .navbar__inner {
-    gap: 12px;
+@media (max-width: 1280px) and (min-width: 1151px) {
+  .navbar--am .navbar__link {
+    font-size: 15px;
+    padding: 8px 10px;
   }
 
-  .navbar__brand {
-    font-size: 20px;
-  }
-
-  .navbar__link {
-    padding-inline: 8px;
-    font-size: 16px;
-  }
-
-  .navbar__actions {
-    gap: 6px;
+  .navbar--am .navbar__inner {
+    gap: 16px;
   }
 }
 
@@ -182,40 +174,5 @@
   .navbar__link--active {
     color: var(--primary-strong);
     background: var(--primary-soft);
-  }
-}
-
-@media (max-width: 1450px) {
-  .navbar--am .navbar__burger {
-    display: inline-flex;
-  }
-
-  .navbar--am .navbar__nav {
-    position: absolute;
-    top: calc(var(--nav-height) + 8px);
-    left: 16px;
-    right: 16px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    background: var(--bg);
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-md);
-    padding: 12px;
-    box-shadow: var(--shadow-lg);
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-  }
-
-  .navbar--am .navbar__nav--open {
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
-
-  .navbar--am .navbar__link {
-    padding: 13px 16px;
-    color: var(--text);
   }
 }

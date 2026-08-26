@@ -116,4 +116,8 @@
   .testimonials__grid {
     grid-template-columns: 1fr;
   }
+
+  .testimonial {
+    padding: 18px;
+  }
 }

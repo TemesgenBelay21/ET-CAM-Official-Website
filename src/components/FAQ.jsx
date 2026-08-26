@@ -14,7 +14,7 @@ function FAQ() {
         <div className="faq__layout">
           <Reveal className="faq__visual-wrap">
             <div className="faq__visual">
-              <img src="/hero image/FAQ.jpg" alt="ET-CAM brand information" loading="lazy" />
+              <img src="/hero image/FAQ.jpg" alt="ET-CAM brand information" loading="lazy" width="480" height="360" />
             </div>
           </Reveal>
           <div className="faq__content">

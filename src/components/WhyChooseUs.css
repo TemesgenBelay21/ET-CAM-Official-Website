@@ -143,7 +143,6 @@
 
 .reason p {
   color: var(--text-muted);
-  font-size: 18px;
   padding-right: 28px;
 }
 
@@ -153,11 +152,17 @@
   }
 
   .why__stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
   .why__reasons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .why__stats {
     grid-template-columns: 1fr;
   }
 }

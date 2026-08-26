@@ -83,6 +83,7 @@ html[data-theme='dark'] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  overflow-x: hidden;
 }
 
 body {
@@ -116,7 +117,7 @@ h4 {
 
 p {
   margin: 0;
-  font-size: 22px;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
   font-weight: 500;
 }
 
@@ -230,4 +231,10 @@ button {
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: min(var(--max-width), 100% - 32px);
+  }
 }
