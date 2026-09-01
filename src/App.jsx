@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Industries from './components/Industries'
+import Workspace from './components/Workspace'
 import Outcomes from './components/Outcomes'
 import WhyChooseUs from './components/WhyChooseUs'
 import Services from './components/Services'
@@ -40,6 +41,7 @@ function App() {
         <Hero />
         <About />
         <Industries />
+        <Workspace />
         <Outcomes />
         <WhyChooseUs />
         <Services />

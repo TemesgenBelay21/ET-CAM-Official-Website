@@ -81,6 +81,14 @@ export const translations = {
         },
       ],
     },
+    workspace: {
+      tag: 'Our Workspace',
+      titlePre: 'Where Ideas ',
+      titleAccent: 'Come to Life',
+      sub: 'Step into the ET-CAM studio, where strategy meets creativity and every campaign is crafted with intention.',
+      caption: 'From content calendars to live analytics, our workspace is built to turn bold ideas into measurable growth for your business.',
+      pills: ['Ideas', 'Creative', 'Growth'],
+    },
     services: {
       tag: 'Services',
       title: 'Everything your brand needs to grow.',
@@ -363,6 +371,14 @@ export const translations = {
         { title: 'ፈጣን አፈጻጸም', text: 'ግልጽ እቅድ እና ቀጥተኛ ትብብር ጥራትን ሳንቀንስ ፕሮጀክቶችን በፍጥነት እንድናስኬድ ያግዙናል።' },
         { title: 'ቀጣይነት ያለው ድጋፍ', text: 'ከስራ መጀመር በኋላም አፈጻጸምን ለመገምገም እና ጥያቄዎችን ለመመለስ ከጎንዎ ነን።' },
       ],
+    },
+    workspace: {
+      tag: 'የስራ ቦታችን',
+      titlePre: 'ሃሳቦች ',
+      titleAccent: 'ህይወት የሚያገኙበት',
+      sub: 'ወደ ET-CAM ስቱዲዮ ግቡ፣ ስትራቴጂ ከፈጠራ ጋር የሚገናኝበት እና እያንዳንዱ ዘመቻ በዓላማ የሚዘጋጅበት።',
+      caption: 'ከይዘት ቀን መቁጠሪያ እስከ የቀጥታ ትንታኔ፣ የስራ ቦታችን የተገነባው ሃሳቦችን ወደሚለካ የንግድ እድገት ለመቀየር ነው።',
+      pills: ['ሃሳቦች', 'ፈጠራ', 'እድገት'],
     },
     services: {
       tag: 'አገልግሎቶች',
