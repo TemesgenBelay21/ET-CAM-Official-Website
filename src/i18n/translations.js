@@ -354,6 +354,8 @@ export const translations = {
       phone: 'Phone Numbers',
       email: 'Email Address',
       locationValue: 'Addis Ababa, Nifas Silk-Lafto',
+      social: 'Social',
+      center: 'Contact Us',
     },
     footer: {
       tagline: 'Ethiopian Creative Advertisement Media — Addis Ababa, Ethiopia.',
@@ -615,6 +617,8 @@ export const translations = {
       phone: 'ስልክ ቁጥሮች',
       email: 'የኢሜይል አድራሻ',
       locationValue: 'አዲስ አበባ፣ ንፋስ ስልክ ላፍቶ',
+      social: 'ማኅበራዊ',
+      center: 'አግኙን',
     },
     footer: {
       tagline: 'የኢትዮጵያ የፈጠራ ማስታወቂያ ሚዲያ — አዲስ አበባ፣ ኢትዮጵያ።',

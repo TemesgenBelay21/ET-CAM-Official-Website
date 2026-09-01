@@ -1,4 +1,4 @@
-import { HiMapPin, HiPhone, HiEnvelope } from 'react-icons/hi2'
+import { HiMapPin, HiPhone, HiEnvelope, HiShare } from 'react-icons/hi2'
 import {
   FaTelegram,
   FaLinkedinIn,
@@ -67,25 +67,77 @@ function Contact() {
                 </Reveal>
               )
             })}
+            <Reveal delay={150}>
+              <div className="contact__socials">
+                {socials.map((social) => {
+                  const Icon = social.icon
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact__social"
+                      data-name={social.name}
+                      aria-label={social.name}
+                    >
+                      <Icon aria-hidden="true" />
+                    </a>
+                  )
+                })}
+              </div>
+            </Reveal>
           </div>
-          <Reveal delay={150}>
-            <div className="contact__socials">
-              {socials.map((social) => {
-                const Icon = social.icon
-                return (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact__social"
-                    data-name={social.name}
-                    aria-label={social.name}
-                  >
-                    <Icon aria-hidden="true" />
-                  </a>
-                )
-              })}
+          <Reveal delay={200}>
+            <div className="contact__visual" aria-hidden="true">
+              <div className="cn-scene">
+                <span className="cn-line cn-line--tr" />
+                <span className="cn-line cn-line--tl" />
+                <span className="cn-line cn-line--br" />
+                <span className="cn-line cn-line--bl" />
+                <div className="cn-cube cn-cube--center">
+                  <span className="cn-face cn-face--top" />
+                  <span className="cn-face cn-face--right" />
+                  <span className="cn-face cn-face--front" />
+                </div>
+                <span className="cn-label cn-label--center">{t.contact.center}</span>
+                <div className="cn-node cn-node--tl" style={{ animationDelay: '0.6s' }}>
+                  <div className="cn-cube cn-cube--sm">
+                    <span className="cn-face cn-face--top" />
+                    <span className="cn-face cn-face--right" />
+                    <span className="cn-face cn-face--front" />
+                  </div>
+                  <span className="cn-node__icon"><HiPhone /></span>
+                  <span className="cn-node__label">{t.contact.phone}</span>
+                </div>
+                <div className="cn-node cn-node--tr" style={{ animationDelay: '1.2s' }}>
+                  <div className="cn-cube cn-cube--sm">
+                    <span className="cn-face cn-face--top" />
+                    <span className="cn-face cn-face--right" />
+                    <span className="cn-face cn-face--front" />
+                  </div>
+                  <span className="cn-node__icon"><HiEnvelope /></span>
+                  <span className="cn-node__label">{t.contact.email}</span>
+                </div>
+                <div className="cn-node cn-node--bl" style={{ animationDelay: '1.8s' }}>
+                  <div className="cn-cube cn-cube--sm">
+                    <span className="cn-face cn-face--top" />
+                    <span className="cn-face cn-face--right" />
+                    <span className="cn-face cn-face--front" />
+                  </div>
+                  <span className="cn-node__icon"><HiMapPin /></span>
+                  <span className="cn-node__label">{t.contact.location}</span>
+                </div>
+                <div className="cn-node cn-node--br" style={{ animationDelay: '0s' }}>
+                  <div className="cn-cube cn-cube--sm">
+                    <span className="cn-face cn-face--top" />
+                    <span className="cn-face cn-face--right" />
+                    <span className="cn-face cn-face--front" />
+                  </div>
+                  <span className="cn-node__icon"><HiShare /></span>
+                  <span className="cn-node__label">{t.contact.social}</span>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>

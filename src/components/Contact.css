@@ -124,6 +124,238 @@
   box-shadow: 0 8px 20px -8px var(--glow);
 }
 
+.contact__visual {
+  position: relative;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cn-scene {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  flex-shrink: 0;
+  transform-origin: top center;
+}
+
+.cn-cube {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  transform-style: preserve-3d;
+  transform: rotateX(-28deg) rotateY(45deg);
+  filter: drop-shadow(0 12px 18px var(--glow));
+}
+
+.cn-cube--center {
+  position: absolute;
+  left: 144px;
+  top: 144px;
+  z-index: 3;
+}
+
+.cn-cube--center .cn-face {
+  border: 1px solid color-mix(in srgb, var(--deep) 40%, transparent);
+}
+
+.cn-cube--center .cn-face--top {
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+}
+
+.cn-cube--center .cn-face--right {
+  background: color-mix(in srgb, var(--grad-b) 82%, var(--deep));
+}
+
+.cn-cube--center .cn-face--front {
+  background: color-mix(in srgb, var(--grad-a) 82%, var(--deep));
+}
+
+.cn-cube--sm {
+  width: 40px;
+  height: 40px;
+  filter: none;
+}
+
+.cn-cube--sm .cn-face--top {
+  background: var(--node-color);
+}
+
+.cn-cube--sm .cn-face--right {
+  background: color-mix(in srgb, var(--node-color) 72%, #0a1f44);
+}
+
+.cn-cube--sm .cn-face--front {
+  background: color-mix(in srgb, var(--node-color) 55%, #0a1f44);
+}
+
+.cn-face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--node-color, var(--primary)) 35%, transparent);
+  backface-visibility: hidden;
+}
+
+.cn-face--top {
+  transform: rotateX(90deg) translateZ(36px);
+}
+
+.cn-face--front {
+  transform: translateZ(36px);
+}
+
+.cn-face--right {
+  transform: rotateY(90deg) translateZ(36px);
+}
+
+.cn-cube--sm .cn-face--top {
+  transform: rotateX(90deg) translateZ(20px);
+}
+
+.cn-cube--sm .cn-face--front {
+  transform: translateZ(20px);
+}
+
+.cn-cube--sm .cn-face--right {
+  transform: rotateY(90deg) translateZ(20px);
+}
+
+.cn-label {
+  position: absolute;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.cn-label--center {
+  left: 50%;
+  top: 226px;
+  transform: translateX(-50%);
+  font-size: 15px;
+  color: var(--primary);
+}
+
+.cn-line {
+  position: absolute;
+  left: 180px;
+  top: 180px;
+  width: 141px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--border-strong));
+  transform-origin: left center;
+  opacity: 0.55;
+}
+
+.cn-line--tr {
+  transform: rotate(45deg);
+}
+
+.cn-line--tl {
+  transform: rotate(135deg);
+}
+
+.cn-line--bl {
+  transform: rotate(-135deg);
+}
+
+.cn-line--br {
+  transform: rotate(-45deg);
+}
+
+.cn-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  animation: cn-float 4s ease-in-out infinite;
+}
+
+.cn-node--tl {
+  left: 22px;
+  top: 24px;
+  --node-color: var(--primary);
+}
+
+.cn-node--tr {
+  right: 22px;
+  top: 24px;
+  --node-color: var(--accent);
+}
+
+.cn-node--bl {
+  left: 22px;
+  bottom: 24px;
+  --node-color: #f97316;
+}
+
+.cn-node--br {
+  right: 22px;
+  bottom: 24px;
+  --node-color: var(--deep);
+}
+
+.cn-node__icon {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 15px;
+  color: var(--node-color);
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--node-color) 40%, transparent);
+  box-shadow: var(--shadow-sm);
+}
+
+.cn-node__label {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+@keyframes cn-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@media (max-width: 900px) {
+  .contact__visual {
+    height: 260px;
+  }
+
+  .cn-scene {
+    transform: scale(0.72);
+  }
+}
+
+@media (max-width: 560px) {
+  .contact__visual {
+    height: 180px;
+  }
+
+  .cn-scene {
+    transform: scale(0.5);
+  }
+}
+
 @media (max-width: 900px) {
   .contact {
     padding: 88px 0;
