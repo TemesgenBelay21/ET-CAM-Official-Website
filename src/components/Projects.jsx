@@ -63,11 +63,13 @@ function Projects() {
           {projects.map((project, index) => (
             <Reveal key={project.title} delay={(index % 3) * 100}>
               <figure className="project">
-                <img src={project.image} alt={`${project.title} project`} loading="lazy" />
-                <figcaption className="project__overlay">
-                  <span>{t.projects.types[project.typeKey]}</span>
-                  <h3>{project.title}</h3>
-                  <p>{t.projects.results[project.resultKey]}</p>
+                <div className="project__media">
+                  <img src={project.image} alt={`${project.title} project`} loading="lazy" />
+                </div>
+                <figcaption className="project__body">
+                  <span className="project__category">{t.projects.types[project.typeKey]}</span>
+                  <h3 className="project__title">{project.title}</h3>
+                  <p className="project__desc">{t.projects.results[project.resultKey]}</p>
                 </figcaption>
               </figure>
             </Reveal>
