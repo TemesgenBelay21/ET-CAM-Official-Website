@@ -97,7 +97,7 @@ export const translations = {
       stats: [
         { value: '20', suffix: '+', label: 'Happy Clients' },
         { value: '400', suffix: '%', label: 'Avg. Engagement Growth' },
-        { value: '47', suffix: 'M+', label: 'Content Views' },
+        { value: '10', suffix: 'M+', label: 'Content Views' },
         { value: '97', suffix: '%', label: 'Client Satisfaction' },
         { value: '600', suffix: '+', label: 'Professional Videos' },
         { value: '70', suffix: '+', label: 'Finished Projects' },
@@ -436,7 +436,7 @@ export const translations = {
         stats: [
           { value: '20', suffix: '+', label: 'ደስተኛ ደንበኞች' },
           { value: '400', suffix: '%', label: 'አማካይ የተሳትፎ እድገት' },
-          { value: '47', suffix: 'M+', label: 'የይዘት እይታዎች' },
+          { value: '10', suffix: 'M+', label: 'የይዘት እይታዎች' },
           { value: '97', suffix: '%', label: 'የደንበኛ እርካታ' },
           { value: '600', suffix: '+', label: 'የባለሙያ ቪዲዮዎች' },
           { value: '70', suffix: '+', label: 'የተጠናቀቁ ፕሮጀክቶች' },
