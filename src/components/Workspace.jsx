@@ -24,7 +24,7 @@ function Workspace() {
         <Reveal>
           <figure className="workspace__media">
             <img
-              src="/hero image/et-cam office.png"
+              src="/hero image/et-cam clean office.png"
               alt="The ET-CAM studio workspace"
               loading="lazy"
             />
