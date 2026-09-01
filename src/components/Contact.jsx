@@ -92,7 +92,7 @@ function Contact() {
             <div className="contact__map">
               <iframe
                 title="ET-CAM location map"
-                src="https://www.google.com/maps?q=8.9652508,38.6519839&z=15&output=embed"
+                src="https://www.google.com/maps?q=et-cam%20digital%20marketing%20agency&z=15&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
