@@ -7,8 +7,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-icons': ['react-icons'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react-icons') || id === 'react-icons') {
+            return 'react-icons'
+          }
         },
       },
     },
