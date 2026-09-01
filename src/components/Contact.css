@@ -126,7 +126,7 @@
 
 .contact__visual {
   position: relative;
-  height: 400px;
+  height: 460px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,8 +134,8 @@
 
 .cn-scene {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 440px;
+  height: 440px;
   flex-shrink: 0;
   transform-origin: top center;
 }
@@ -145,8 +145,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   transform: translate(-50%, -50%);
   background: radial-gradient(circle, var(--primary-soft) 0%, transparent 65%);
   opacity: 0.7;
@@ -242,39 +242,44 @@
 
 .cn-line {
   position: absolute;
-  left: 199px;
-  top: 198px;
-  height: 1.5px;
+  left: 220px;
+  top: 219px;
+  height: 2px;
   border-radius: 2px;
-  background: repeating-linear-gradient(
+  background: linear-gradient(
     90deg,
-    var(--line-color) 0 9px,
-    transparent 9px 16px
+    var(--line-color) 0%,
+    color-mix(in srgb, var(--line-color) 45%, transparent) 100%
   );
+  box-shadow: 0 0 14px -3px var(--line-color);
   transform-origin: left center;
-  opacity: 0.55;
+  opacity: 0.85;
   pointer-events: none;
-  animation: cn-flow 1.4s linear infinite;
+  z-index: 1;
 }
 
 .cn-line--tl {
-  width: 160px;
-  transform: rotate(220deg);
+  width: 250px;
+  transform: rotate(225deg);
+  --line-color: var(--primary);
 }
 
 .cn-line--tr {
-  width: 160px;
-  transform: rotate(-40deg);
+  width: 250px;
+  transform: rotate(-45deg);
+  --line-color: var(--accent);
 }
 
 .cn-line--bl {
-  width: 172px;
-  transform: rotate(140deg);
+  width: 250px;
+  transform: rotate(135deg);
+  --line-color: #f97316;
 }
 
 .cn-line--br {
-  width: 172px;
-  transform: rotate(40deg);
+  width: 250px;
+  transform: rotate(45deg);
+  --line-color: color-mix(in srgb, var(--deep) 70%, var(--accent));
 }
 
 .cn-node {
@@ -288,31 +293,29 @@
 }
 
 .cn-node--tl {
-  left: 50px;
-  top: 56px;
+  left: 12px;
+  top: 12px;
   --node-color: var(--primary);
-  --line-color: var(--primary);
 }
 
 .cn-node--tr {
-  right: 50px;
-  top: 56px;
+  right: 12px;
+  top: 12px;
   --node-color: var(--accent);
-  --line-color: var(--accent);
 }
 
 .cn-node--bl {
-  left: 50px;
-  bottom: 66px;
+  left: 12px;
+  bottom: 12px;
+  flex-direction: column-reverse;
   --node-color: #f97316;
-  --line-color: #f97316;
 }
 
 .cn-node--br {
-  right: 50px;
-  bottom: 66px;
+  right: 12px;
+  bottom: 12px;
+  flex-direction: column-reverse;
   --node-color: var(--deep);
-  --line-color: var(--deep);
 }
 
 .cn-node__icon {
@@ -379,15 +382,9 @@
   }
 }
 
-@keyframes cn-flow {
-  to {
-    background-position: 32px 0;
-  }
-}
-
 @media (max-width: 1100px) {
   .contact__visual {
-    height: 288px;
+    height: 317px;
   }
 
   .cn-scene {
@@ -397,7 +394,7 @@
 
 @media (max-width: 560px) {
   .contact__visual {
-    height: 200px;
+    height: 220px;
   }
 
   .cn-scene {
