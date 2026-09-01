@@ -21,7 +21,7 @@
 .contact__grid {
   position: relative;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 0.9fr 1.3fr;
   gap: 48px;
   align-items: start;
 }
