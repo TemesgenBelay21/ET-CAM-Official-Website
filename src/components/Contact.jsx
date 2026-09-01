@@ -91,51 +91,34 @@ function Contact() {
           <Reveal delay={200}>
             <div className="contact__visual" aria-hidden="true">
               <div className="cn-scene">
-                <span className="cn-orbit-ring" />
-                <span className="cn-line cn-line--tr" />
+                <span className="cn-ring cn-ring--outer" />
+                <span className="cn-ring cn-ring--inner" />
                 <span className="cn-line cn-line--tl" />
-                <span className="cn-line cn-line--br" />
+                <span className="cn-line cn-line--tr" />
                 <span className="cn-line cn-line--bl" />
-                <div className="cn-cube cn-cube--center">
-                  <span className="cn-face cn-face--top" />
-                  <span className="cn-face cn-face--right" />
-                  <span className="cn-face cn-face--front" />
-                </div>
-                <span className="cn-label cn-label--center">{t.contact.center}</span>
-                <div className="cn-node cn-node--tl" style={{ animationDelay: '0.6s' }}>
-                  <span className="cn-node__icon"><HiPhone /></span>
-                  <div className="cn-cube cn-cube--sm">
+                <span className="cn-line cn-line--br" />
+                <div className="cn-hub">
+                  <div className="cn-cube">
                     <span className="cn-face cn-face--top" />
                     <span className="cn-face cn-face--right" />
                     <span className="cn-face cn-face--front" />
                   </div>
+                  <span className="cn-hub__label">{t.contact.center}</span>
+                </div>
+                <div className="cn-node cn-node--tl" style={{ animationDelay: '0.6s' }}>
+                  <span className="cn-node__icon"><HiPhone /></span>
                   <span className="cn-node__label">{t.contact.phone}</span>
                 </div>
                 <div className="cn-node cn-node--tr" style={{ animationDelay: '1.2s' }}>
                   <span className="cn-node__icon"><HiEnvelope /></span>
-                  <div className="cn-cube cn-cube--sm">
-                    <span className="cn-face cn-face--top" />
-                    <span className="cn-face cn-face--right" />
-                    <span className="cn-face cn-face--front" />
-                  </div>
                   <span className="cn-node__label">{t.contact.email}</span>
                 </div>
                 <div className="cn-node cn-node--bl" style={{ animationDelay: '1.8s' }}>
                   <span className="cn-node__icon"><HiMapPin /></span>
-                  <div className="cn-cube cn-cube--sm">
-                    <span className="cn-face cn-face--top" />
-                    <span className="cn-face cn-face--right" />
-                    <span className="cn-face cn-face--front" />
-                  </div>
                   <span className="cn-node__label">{t.contact.location}</span>
                 </div>
                 <div className="cn-node cn-node--br" style={{ animationDelay: '0s' }}>
                   <span className="cn-node__icon"><HiShare /></span>
-                  <div className="cn-cube cn-cube--sm">
-                    <span className="cn-face cn-face--top" />
-                    <span className="cn-face cn-face--right" />
-                    <span className="cn-face cn-face--front" />
-                  </div>
                   <span className="cn-node__label">{t.contact.social}</span>
                 </div>
               </div>
