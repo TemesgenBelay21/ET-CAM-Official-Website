@@ -10,6 +10,7 @@ import WhyChooseUs from './components/WhyChooseUs'
 import Services from './components/Services'
 import Process from './components/Process'
 import Projects from './components/Projects'
+import Success from './components/Success'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import ContactCTA from './components/ContactCTA'
@@ -47,6 +48,7 @@ function App() {
         <Services />
         <Process />
         <Projects />
+        <Success />
         <Testimonials />
         <FAQ />
         <ContactCTA />
