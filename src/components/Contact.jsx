@@ -1,4 +1,4 @@
-import { HiMapPin, HiPhone, HiEnvelope, HiShare } from 'react-icons/hi2'
+import { HiMapPin, HiPhone, HiEnvelope } from 'react-icons/hi2'
 import {
   FaTelegram,
   FaLinkedinIn,
@@ -21,7 +21,7 @@ const socials = [
 function Contact() {
   const { t } = useLanguage()
   const details = [
-    { icon: HiMapPin, label: t.contact.location, value: t.contact.locationValue, href: null },
+    { icon: HiMapPin, label: t.contact.location, value: t.contact.locationValue, href: 'https://maps.app.goo.gl/34YJp9tw6sznijqd8' },
     {
       icon: HiPhone,
       label: t.contact.phone,
@@ -89,39 +89,14 @@ function Contact() {
             </Reveal>
           </div>
           <Reveal delay={200}>
-            <div className="contact__visual" aria-hidden="true">
-              <div className="cn-scene">
-                <span className="cn-ring cn-ring--outer" />
-                <span className="cn-ring cn-ring--inner" />
-                <span className="cn-line cn-line--tl" />
-                <span className="cn-line cn-line--tr" />
-                <span className="cn-line cn-line--bl" />
-                <span className="cn-line cn-line--br" />
-                <div className="cn-hub">
-                  <div className="cn-cube">
-                    <span className="cn-face cn-face--top" />
-                    <span className="cn-face cn-face--right" />
-                    <span className="cn-face cn-face--front" />
-                  </div>
-                  <span className="cn-hub__label">{t.contact.center}</span>
-                </div>
-                <div className="cn-node cn-node--tl" style={{ animationDelay: '0.6s' }}>
-                  <span className="cn-node__icon"><HiPhone /></span>
-                  <span className="cn-node__label">{t.contact.phone}</span>
-                </div>
-                <div className="cn-node cn-node--tr" style={{ animationDelay: '1.2s' }}>
-                  <span className="cn-node__icon"><HiEnvelope /></span>
-                  <span className="cn-node__label">{t.contact.email}</span>
-                </div>
-                <div className="cn-node cn-node--bl" style={{ animationDelay: '1.8s' }}>
-                  <span className="cn-node__icon"><HiMapPin /></span>
-                  <span className="cn-node__label">{t.contact.location}</span>
-                </div>
-                <div className="cn-node cn-node--br" style={{ animationDelay: '0s' }}>
-                  <span className="cn-node__icon"><HiShare /></span>
-                  <span className="cn-node__label">{t.contact.social}</span>
-                </div>
-              </div>
+            <div className="contact__map">
+              <iframe
+                title="ET-CAM location map"
+                src="https://www.google.com/maps?q=8.9652508,38.6519839&z=15&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </Reveal>
         </div>
