@@ -21,7 +21,7 @@ const socials = [
 function Contact() {
   const { t } = useLanguage()
   const details = [
-    { icon: HiMapPin, label: t.contact.location, value: t.contact.locationValue, href: 'https://maps.app.goo.gl/34YJp9tw6sznijqd8' },
+    { icon: HiMapPin, label: t.contact.location, value: t.contact.locationValue, href: 'https://maps.app.goo.gl/NeCvodDA9Na92rAEA' },
     {
       icon: HiPhone,
       label: t.contact.phone,
@@ -92,7 +92,7 @@ function Contact() {
             <div className="contact__map">
               <iframe
                 title="ET-CAM location map"
-                src="https://www.google.com/maps?q=8.9652508,38.6519839&z=17&output=embed"
+                src="https://www.google.com/maps?q=8.9587368,38.7499773&z=17&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
