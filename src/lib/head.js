@@ -60,36 +60,6 @@ function escapeHtml(value) {
     .replace(/"/g, '&quot;')
 }
 
-export function headTags(linePrefix) {
-  const prefix = linePrefix ?? ''
-  return LANGS.map((lang) => {
-    const seo = headForLang(lang)
-    const leader = `${prefix}    `
-    return `${leader}<title>${escapeHtml(seo.title)}</title>
-${leader}<meta name="description" content="${escapeHtml(seo.description)}" />
-${leader}<meta property="og:type" content="website" />
-${leader}<meta property="og:site_name" content="ET-CAM" />
-${leader}<meta property="og:locale" content="${escapeHtml(seo.ogLocale)}" />
-${leader}<meta property="og:url" content="${escapeHtml(seo.canonical)}" />
-${leader}<meta property="og:title" content="${escapeHtml(seo.title)}" />
-${leader}<meta property="og:description" content="${escapeHtml(seo.ogDescription)}" />
-${leader}<meta property="og:image" content="${escapeHtml(seo.image)}" />
-${leader}<meta property="og:image:alt" content="ET-CAM Ethiopian Creative Advertisement Media" />
-${leader}<meta name="twitter:card" content="summary_large_image" />
-${leader}<meta name="twitter:title" content="${escapeHtml(seo.title)}" />
-${leader}<meta name="twitter:description" content="${escapeHtml(seo.twitterDescription)}" />
-${leader}<meta name="twitter:image" content="${escapeHtml(seo.image)}" />
-${leader}<link rel="canonical" href="${escapeHtml(seo.canonical)}" />
-${seo.alternates
-  .map(
-    (alt) =>
-      `${leader}<link rel="alternate" hreflang="${alt.hreflang}" href="${escapeHtml(alt.href)}" />`,
-  )
-  .join('\n')}
-${leader}<script type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`
-  }).join('\n')
-}
-
 export function headHtml(lang, linePrefix) {
   const seo = headForLang(lang)
   const prefix = linePrefix ?? ''
@@ -108,14 +78,14 @@ ${leader}<meta name="twitter:card" content="summary_large_image" />
 ${leader}<meta name="twitter:title" content="${escapeHtml(seo.title)}" />
 ${leader}<meta name="twitter:description" content="${escapeHtml(seo.twitterDescription)}" />
 ${leader}<meta name="twitter:image" content="${escapeHtml(seo.image)}" />
-${leader}<link rel="canonical" href="${escapeHtml(seo.canonical)}" />
+${leader}<link rel="canonical" data-seo-canonical href="${escapeHtml(seo.canonical)}" />
 ${seo.alternates
   .map(
     (alt) =>
-      `${leader}<link rel="alternate" hreflang="${alt.hreflang}" href="${escapeHtml(alt.href)}" />`,
+      `${leader}<link rel="alternate" data-seo-hreflang hreflang="${alt.hreflang}" href="${escapeHtml(alt.href)}" />`,
   )
   .join('\n')}
-${leader}<script type="application/ld+json">${JSON.stringify(seo.jsonLd)}</script>`
+${leader}<script type="application/ld+json" data-seo-jsonld>${JSON.stringify(seo.jsonLd)}</script>`
 }
 
 export function applyHead(lang) {
