@@ -23,9 +23,16 @@ const THEME_KEY = 'et-cam-theme'
 
 function App() {
   const [theme, setTheme] = useState(() => {
-    const stored = localStorage.getItem(THEME_KEY)
+    const stored =
+      typeof window !== 'undefined' ? localStorage.getItem(THEME_KEY) : null
     if (stored === 'dark' || stored === 'light') return stored
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      return 'dark'
+    }
+    return 'light'
   })
 
   useEffect(() => {
