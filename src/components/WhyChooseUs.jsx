@@ -33,7 +33,9 @@ const reasonIcons = [
 function Counter({ value, suffix }) {
   const ref = useRef(null)
   const started = useRef(false)
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState(() =>
+    typeof window === 'undefined' ? value : 0,
+  )
 
   useEffect(() => {
     const el = ref.current
