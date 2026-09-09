@@ -3,20 +3,34 @@ import { translations } from './translations'
 import { applyHead } from '../lib/head.js'
 
 const LanguageContext = createContext(null)
+const LANG_KEY = 'et-cam-lang'
 
 export function LanguageProvider({ defaultLang = 'en', children }) {
-  const [lang, setLang] = useState(() => (defaultLang === 'am' ? 'am' : 'en'))
+  const [lang, setLang] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem(LANG_KEY)
+      if (stored === 'am' || stored === 'en') return stored
+    }
+    return defaultLang === 'am' ? 'am' : 'en'
+  })
 
   useEffect(() => {
     const currentTranslations = translations[lang] || translations.en
     document.documentElement.setAttribute('lang', lang)
     document.title = currentTranslations.meta.title
     applyHead(lang)
+    localStorage.setItem(LANG_KEY, lang)
+    if (typeof window !== 'undefined') {
+      const target = lang === 'am' ? '/am/' : '/'
+      if (window.location.pathname !== target) {
+        window.history.replaceState(null, '', target)
+      }
+    }
   }, [lang])
 
   const toggleLang = useCallback(() => {
-    window.location.href = lang === 'en' ? '/am/' : '/'
-  }, [lang])
+    setLang((current) => (current === 'en' ? 'am' : 'en'))
+  }, [])
 
   const value = useMemo(
     () => ({
