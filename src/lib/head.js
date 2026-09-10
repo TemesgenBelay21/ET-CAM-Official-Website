@@ -11,7 +11,7 @@ function jsonLdFor(lang) {
     name: 'ET-CAM (Ethiopian Creative Advertisement Media)',
     description:
       'Full-service digital marketing agency in Addis Ababa providing social media, content production, web development, branding, advertising, SEO, and marketing automation.',
-    image: `${BASE_URL}/hero%20image/hero_image.jpg`,
+    image: `${BASE_URL}/og-image/et-cam-og-card.png`,
     telephone: '+251-936113051',
     email: 'etcamagency@gmail.com',
     address: {
@@ -42,7 +42,13 @@ export function headForLang(lang) {
       : 'Strategy, content, websites, branding, advertising, and automation from one in-house team.',
     ogLocale: isAm ? 'am_ET' : 'en_US',
     canonical: `${BASE_URL}${path}`,
-    image: `${BASE_URL}/hero%20image/hero_image.jpg`,
+    image: `${BASE_URL}/og-image/et-cam-og-card.png`,
+    ogImageType: 'image/png',
+    ogImageWidth: '1200',
+    ogImageHeight: '630',
+    ogImageAlt: isAm
+      ? 'የET-CAM የኢትዮጵያ የፈጠራ ማስታወቂያ ሚዲያ'
+      : 'ET-CAM — Ethiopian Creative Advertisement Media',
     alternates: [
       { hreflang: 'en', href: `${BASE_URL}/` },
       { hreflang: 'am', href: `${BASE_URL}/am/` },
@@ -73,11 +79,15 @@ ${leader}<meta property="og:url" content="${escapeHtml(seo.canonical)}" />
 ${leader}<meta property="og:title" content="${escapeHtml(seo.title)}" />
 ${leader}<meta property="og:description" content="${escapeHtml(seo.ogDescription)}" />
 ${leader}<meta property="og:image" content="${escapeHtml(seo.image)}" />
-${leader}<meta property="og:image:alt" content="ET-CAM Ethiopian Creative Advertisement Media" />
+${leader}<meta property="og:image:alt" content="${escapeHtml(seo.ogImageAlt)}" />
+${leader}<meta property="og:image:width" content="${seo.ogImageWidth}" />
+${leader}<meta property="og:image:height" content="${seo.ogImageHeight}" />
+${leader}<meta property="og:image:type" content="${seo.ogImageType}" />
 ${leader}<meta name="twitter:card" content="summary_large_image" />
 ${leader}<meta name="twitter:title" content="${escapeHtml(seo.title)}" />
 ${leader}<meta name="twitter:description" content="${escapeHtml(seo.twitterDescription)}" />
 ${leader}<meta name="twitter:image" content="${escapeHtml(seo.image)}" />
+${leader}<meta name="twitter:image:alt" content="${escapeHtml(seo.ogImageAlt)}" />
 ${leader}<link rel="canonical" data-seo-canonical href="${escapeHtml(seo.canonical)}" />
 ${seo.alternates
   .map(
@@ -108,9 +118,14 @@ export function applyHead(lang) {
   setMeta({ property: 'og:title', content: seo.title })
   setMeta({ property: 'og:description', content: seo.ogDescription })
   setMeta({ property: 'og:image', content: seo.image })
+  setMeta({ property: 'og:image:alt', content: seo.ogImageAlt })
+  setMeta({ property: 'og:image:width', content: seo.ogImageWidth })
+  setMeta({ property: 'og:image:height', content: seo.ogImageHeight })
+  setMeta({ property: 'og:image:type', content: seo.ogImageType })
   setMeta({ name: 'twitter:title', content: seo.title })
   setMeta({ name: 'twitter:description', content: seo.twitterDescription })
   setMeta({ name: 'twitter:image', content: seo.image })
+  setMeta({ name: 'twitter:image:alt', content: seo.ogImageAlt })
 
   let canonical = document.querySelector('link[data-seo-canonical]')
   if (!canonical) {
