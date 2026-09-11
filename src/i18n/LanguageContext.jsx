@@ -6,13 +6,12 @@ const LanguageContext = createContext(null)
 const LANG_KEY = 'et-cam-lang'
 
 export function LanguageProvider({ defaultLang = 'en', children }) {
-  const [lang, setLang] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem(LANG_KEY)
-      if (stored === 'am' || stored === 'en') return stored
-    }
-    return defaultLang === 'am' ? 'am' : 'en'
-  })
+  const [lang, setLang] = useState(() => (defaultLang === 'am' ? 'am' : 'en'))
+
+  useEffect(() => {
+    const stored = localStorage.getItem(LANG_KEY)
+    if (stored === 'am' || stored === 'en') setLang(stored)
+  }, [])
 
   useEffect(() => {
     const currentTranslations = translations[lang] || translations.en

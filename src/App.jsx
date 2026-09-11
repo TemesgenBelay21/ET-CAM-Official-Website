@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -22,23 +22,28 @@ import ScrollProgress from './components/ScrollProgress'
 const THEME_KEY = 'et-cam-theme'
 
 function App() {
-  const [theme, setTheme] = useState(() => {
-    const stored =
-      typeof window !== 'undefined' ? localStorage.getItem(THEME_KEY) : null
-    if (stored === 'dark' || stored === 'light') return stored
-    if (
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      return 'dark'
-    }
-    return 'light'
-  })
+  const [theme, setTheme] = useState('light')
+  const mounted = useRef(false)
 
   useEffect(() => {
+    if (!mounted.current) return
     document.documentElement.setAttribute('data-theme', theme)
     localStorage.setItem(THEME_KEY, theme)
   }, [theme])
+
+  useEffect(() => {
+    const stored = localStorage.getItem(THEME_KEY)
+    const preferred =
+      stored === 'dark' || stored === 'light'
+        ? stored
+        : window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light'
+    document.documentElement.setAttribute('data-theme', preferred)
+    localStorage.setItem(THEME_KEY, preferred)
+    mounted.current = true
+    setTheme(preferred)
+  }, [])
 
   const toggleTheme = () => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))
 
