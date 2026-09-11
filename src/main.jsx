@@ -7,6 +7,8 @@ import { LANGS } from './lib/head.js'
 
 const defaultLang = window.location.pathname.startsWith('/am') ? 'am' : 'en'
 
+document.documentElement.classList.add('js')
+
 const container = document.getElementById('root')
 const app = (
   <StrictMode>
