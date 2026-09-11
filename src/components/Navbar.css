@@ -161,6 +161,11 @@
     display: inline-flex;
   }
 
+  /* Pin action buttons to far right once nav leaves flex flow */
+  .navbar__actions {
+    margin-inline-start: auto;
+  }
+
   .navbar__nav {
     position: absolute;
     top: calc(var(--nav-height) + 8px);
