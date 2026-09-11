@@ -29,11 +29,16 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 22px;
   letter-spacing: -0.02em;
   color: var(--text);
+}
+
+.navbar__brand span {
+  white-space: nowrap;
 }
 
 .navbar__logo {
@@ -47,8 +52,16 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  min-width: 0;
   margin-inline-start: auto;
   white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.navbar__nav::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar__link {
@@ -121,7 +134,11 @@
   display: none;
 }
 
-@media (max-width: 1280px) and (min-width: 1151px) {
+.navbar--am .navbar__brand {
+  margin-inline-start: -4px;
+}
+
+@media (max-width: 1280px) {
   .navbar--am .navbar__link {
     font-size: 15px;
     padding: 8px 10px;
