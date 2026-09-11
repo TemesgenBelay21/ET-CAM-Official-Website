@@ -136,29 +136,24 @@
   }
 }
 
-/* Amharic: compact inline navbar — reduce size so links fit in one row */
+/* Amharic: same text size as English, nav shifted left to avoid overflow */
 .navbar--am .navbar__inner {
-  gap: 8px;
+  gap: 10px;
 }
 
 .navbar--am .navbar__nav {
   gap: 0;
-  margin-inline-start: 0;
+  margin-inline-start: 4px;
 }
 
 .navbar--am .navbar__link {
-  font-size: 12.5px;
-  padding: 6px 7px;
-  letter-spacing: 0;
-  font-weight: 700;
-}
-
-.navbar--am .navbar__brand span {
-  display: none;
+  padding: 8px 9px;
 }
 
 .navbar--am .navbar__actions {
-  gap: 6px;
+  gap: 8px;
+  margin-inline-start: auto;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1150px) {
