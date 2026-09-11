@@ -35,6 +35,7 @@
   font-size: 22px;
   letter-spacing: -0.02em;
   color: var(--text);
+  transform: translateX(calc((min(1280px, 100vw - 48px) - 100vw) / 2 + 12px));
 }
 
 .navbar__brand span {
@@ -134,8 +135,10 @@
   display: none;
 }
 
-.navbar--am .navbar__brand {
-  margin-inline-start: -4px;
+@media (max-width: 900px) {
+  .navbar__brand {
+    transform: translateX(-8px);
+  }
 }
 
 @media (max-width: 1280px) {
